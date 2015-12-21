@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Pickles for Everyone!</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <tr>This means it works.</tr>
+      <th>Message</th>
+      <th colspan="15"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pickles.each do |pickle| %>
+      <tr>
+        <td><%= pickle.category %></td>
+        <td><%= pickle.message %></td>
+        <td><%= link_to 'Show', pickle %></td>
+        <td><%= link_to 'Edit', edit_pickle_path(pickle) %></td>
+        <td><%= link_to 'Destroy', pickle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pickle', new_pickle_path %>

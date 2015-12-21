@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @pickle.category %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @pickle.message %>
+</p>
+
+<%= link_to 'Edit', edit_pickle_path(@pickle) %> |
+<%= link_to 'Back', pickles_path %>

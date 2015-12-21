@@ -1,0 +1,25 @@
+<%= form_for(@pickle) do |f| %>
+  <% if @pickle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pickle.errors.count, "error") %> prohibited this pickle from being saved:</h2>
+
+      <ul>
+      <% @pickle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :message %><br>
+    <%= f.text_area :message %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
